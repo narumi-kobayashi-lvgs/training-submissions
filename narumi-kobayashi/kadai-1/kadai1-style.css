@@ -1,0 +1,408 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+/* ==========================================
+   全体設定
+========================================== */
+
+
+body{
+    margin: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    color: #333;
+    background-color: #fff;
+}
+
+header, footer {
+  width: 100%;
+}
+
+/* ==========================================
+   ヘッダーエリア（ロゴとナビ）
+========================================== */
+header {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    box-shadow: 4px 8px 15px 0px rgba(0,0,0,0.2);
+    border-bottom: 1px solid #eee;
+    box-sizing: border-box;
+}
+
+.logo {
+    color: #ff553c;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.login {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.get-started {
+    background-color: #ff553c;
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-family: sans-serif;
+    padding: 10px 16px;
+}
+
+/* ==========================================
+   メイン画像エリア（ヘッダーすぐ下）
+========================================== */
+.hero-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+}
+
+/* 写真の上の文字配置 */
+.hero-content h1 {
+    position: absolute;
+    color: rgb(0, 0, 0);
+    top: 15%;
+    left: 8%;
+    font-size: 24px;
+    margin: 0;
+}
+
+.hero-content p {
+    position: absolute;
+    color: rgb(56, 56, 56);
+    top: 50%;
+    bottom: 10%;
+    font-size: 11px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.hero-content img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+/* ==========================================
+   メインコンテンツエリア（横並びにする）
+========================================== */
+.contents-area {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 60px auto; 
+    padding: 0 20px;
+    box-sizing: border-box; 
+}
+
+/* ==========================================
+   左側：ブログ記事一覧（2列にする）
+========================================== */
+.contents-left {
+    width: 100%; 
+    height: auto;
+}
+
+.contents-left h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0 0 30px 0;
+}
+
+.blog-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1frz);
+    gap: 40px 25px;
+    width: 100%;
+}
+
+.blog-item {
+    width: 100%;
+}
+
+.blog-thumbnail img {
+    width: 100%;
+    max-width: 100%;
+    height:auto;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+}
+
+.blog-meta {
+    margin: 12px 0 8px 0;
+    font-size: 14px;
+    color: #888;
+}
+
+/* カテゴリ文字の色 */
+.blog-category {
+    font-weight: bold;
+}
+.category-travel, .category-travel2, .category-travel3, .category-travel4 {
+    color: #ff553c;
+}
+.category-culinary, .category-culinary2 {
+    color: #ff553c;
+}
+
+.blog-title {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.4;
+    margin: 0 0 8px 0;
+    color: #303030;
+}
+
+.blog-excerpt, 
+.blog-item p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+}
+
+/* ==========================================
+   右側：サイドバーエリア（人気記事＆もっと見る）
+========================================== */
+.container {
+    width: 100%;
+    max-width: none;
+    min-width: 150px;
+    flex-shrink: 0; /* 画面が狭くなってもサイドバーが潰れないように固定 */
+}
+
+.sidebar-area {
+    display: flex;
+    flex-direction: column; /* 上下に並べる */
+    gap: 50px; /* 人気記事エリアともっと見るエリアの隙間 */
+    width: 100%;
+}
+
+/* --- 人気記事の場所 --- */
+.contents-right {
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.contents-right h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+}
+
+/* 文字・余白・線・余白を作る設定 */
+.contents-right p {
+    display: flex;
+    align-self: center;
+    font-size: 15px;
+    color: #303030;
+    margin: 0;
+    padding: 20px 0; 
+    line-height: 1.5;    
+    border-bottom: 1px solid #eeeeee; /* 薄い区切り線 */
+}
+
+/* 最初だけ上の余白を少し詰める */
+.contents-right p:first-of-type {
+    padding-top: 5px;
+}
+
+/* 一番最後のタイトルだけは下の線を消す消しゴム */
+.contents-right p:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* --- もっと見るセクション --- */
+.sidebar-sub {
+    width: 100%;
+}
+
+.sidebar-sub h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+}
+
+/* ボタンを横並びにする */
+.sidebar-sub button {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    color: #888;
+    padding: 10px 20px;
+    margin-right: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* ==========================================
+   フッターエリア
+========================================== */
+footer {
+    background-color: #413f3f;
+    color: #fff;
+    padding: 40px 20%;
+    font-family: Arial, Helvetica, sans-serif;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 80px;
+}
+
+footer h4, footer h2 {
+    font-size: 18px;
+    margin: 0 0 20px 0;
+}
+
+footer p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ccc;
+    margin: 0 0 10px 0;
+}
+
+.sns-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sns-list li {
+    margin-bottom: 10px;
+}
+
+.sns-list a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.app.download img {
+    height: 40px;
+    margin-right: 10px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+/* ==========================================
+   ★ここから画面横幅 481px 以上のとき
+   タブレット・PCでは、元々作っていた「横並び・2列」のデザインに戻す！★
+========================================== */
+@media screen and (min-width: 481px) {
+    header {
+        padding: 20px 10%; /* PC用に余白を広く戻す */
+    }
+
+    nav {
+        gap: 20px;
+    }
+
+    /* メイン画像の上の文字をPC用のサイズと位置に戻す */
+    .hero-content h1 {
+        top: 15%;
+        left: 8%;
+        font-size: 48px;
+        color: black; 
+    }
+
+    .hero-content p {
+        top: 50%;
+        left: 8%;
+        bottom: auto;
+        font-size: 16px;
+        color: rgb(56, 56, 56); 
+    }
+
+    /* コンテンツエリアを「横並び」に戻す */
+    .contents-area {
+        flex-direction: row; 
+        justify-content: space-between; 
+        max-width: 1200px;
+        margin: 60px auto; 
+    }
+
+    /* 左側：ブログ記事一覧を「横幅750px」に戻す */
+    .contents-left {
+        width: 750px; 
+    }
+
+    /* ブログ一覧を「2列」に戻す */
+    .blog-list {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 40px 25px;
+    }
+
+    .blog-item {
+        width: 360px;
+    }
+
+    .blog-thumbnail img {
+        max-width: 360px;
+        height: 240px;
+    }
+
+    /* 右側：サイドバーを「横幅30%」に戻して右側に固定する */
+    .container {
+        width: 30%;
+        max-width: 300px;
+        min-width: 150px;
+        flex-shrink: 0;
+    }
+
+    /* フッターの中身を「横並び」に戻す */
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 60px 10%;
+        margin-top: 80px;
+        display: flex;
+    }
+}
+
+
+
+/* ==========================================
+   ヘッダーとフッターを完全にメイン幅（1200px）に合わせる
+========================================== */
+header {
+    max-width: 1200px !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+footer {
+    max-width: 1200px !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
